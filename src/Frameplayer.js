@@ -89,8 +89,12 @@ FramePlayer.prototype.render = function(player) {
           ? (player.currentFrame -= 1)
           : (player.currentFrame += 1);
 
-        if (player.currentFrame >= videoFramesNum) player.paused = true;
-        else if (player.currentFrame < 0)
+        if (player.currentFrame >= videoFramesNum - 1) {
+          player.paused = true;
+          var event = new CustomEvent('onCompleteVideoAnimation');
+          document.dispatchEvent(event);
+
+        } else if (player.currentFrame < 0)
           player.currentFrame = videoFramesNum - 1;
 
         player.drawFrame(player);
