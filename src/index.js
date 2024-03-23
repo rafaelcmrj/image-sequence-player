@@ -1,5 +1,7 @@
 const FramePlayer = require('./Frameplayer').default;
 
-window.FramePlayer = FramePlayer;
+if (typeof window !== "undefined") {
+    window.FramePlayer = FramePlayer;
+}
 
 export default FramePlayer;
