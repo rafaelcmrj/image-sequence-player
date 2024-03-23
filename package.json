@@ -5,7 +5,7 @@
   "copyright": "Copyright Skywatch, Inc. <https://www.service.skywatch24.com/>",
   "main": "src/index.js",
   "engines": {
-    "node": "14.0.0"
+    "node": ">=14.0.0"
   },
   "keywords": [
     "image",
